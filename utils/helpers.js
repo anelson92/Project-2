@@ -1,10 +1,10 @@
-const dayjs = require('dayjs')
+// const dayjs = require('dayjs')
 
-module.exports = {
-  format_date: (date) => {
-    return `${dayjs(date).format('dddd, MMM, d YYYY')}` 
-  }
-};
+// module.exports = {
+//   format_date: (date) => {
+//     return `${dayjs(date).format('dddd, MMM, d YYYY')}` 
+//   }
+// };
 
 // module.exports = {
 //     format_date: (date) => {
