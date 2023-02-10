@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { default: events } = require('inquirer/lib/utils/events');
+// const { default: events } = require('inquirer/lib/utils/events');
 const { Event, Guest } = require('../../models');
 
 router.post('/', async (req, res) => {
@@ -29,6 +29,7 @@ router.get('/', async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
+});
 
     router.get('/event/:id', async (req, res) => {
       try {

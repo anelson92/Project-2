@@ -2,12 +2,10 @@ const { Guest } = require("../models");
 
 const guestData = [
   {
-    attending: "Yes",
-    guest_id: 1,
-    event_id: 1,
+    attending: "Yes"
   },
 ];
 
-const seedGuests = () => Event.bulkCreate(guestData);
+const seedGuests = () => Guest.bulkCreate(guestData);
 
 module.exports = seedGuests;
