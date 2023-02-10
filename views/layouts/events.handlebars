@@ -1,14 +1,3 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="google" content="notranslate" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Events</title>
-    <link rel="stylesheet" href="./public/css/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  </head>
-  
   <body>
 
     <div class="container">
@@ -48,45 +37,46 @@
                 </div>
               </div>
       {{/each}}
-      {{else}}
-      <p class="emtpy">You have no events to RSVP to!</p>
-      {{/else}}
+        {{!-- if the guest has no events then show this p element--}}
+        {{else}}
+        <p class="emtpy">You have no events to RSVP to!</p>
+        {{/else}}
       {{#each guests as |event_id|}}
-      <div class="row">
-        <div class="col s6 m6">
-          <div class="small card">
-            <div class="card-image">
-              <img src="{{image-url}}">
-              <span class="card-title">{{event_name}}</span>
-              <a class="btn-floating halfway-fab waves-effect waves-light indigo lighten-2"><i class="material-icons">check</i></a>
+            <div class="row">
+            <div class="col s6 m6">
+                <div class="small card">
+                <div class="card-image">
+                    <img src="{{image-url}}">
+                    <span class="card-title">{{event_name}}</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light indigo lighten-2"><i class="material-icons">check</i></a>
+                </div>
+                <div class="card-content">
+                    <p>
+                    {{event_type}}
+                    </p>
+                    <p>
+                    {{event_date}}
+                    </p>
+                    <p>
+                    {{event_loc}}
+                    </p>
+                    <p>
+                    {{description}}
+                    </p>
+                    <p>
+                    Hosted by:
+                    {{event_owner}}
+                    </p>
+                </div>
+                </div>
             </div>
-            <div class="card-content">
-              <p>
-                {{event_type}}
-              </p>
-              <p>
-                {{event_date}}
-              </p>
-              <p>
-                {{event_loc}}
-              </p>
-              <p>
-                {{description}}
-              </p>
-              <p>
-                Hosted by:
-                {{event_owner}}
-              </p>
-            </div>
-          </div>
-        </div>
+        {{!-- if no events are RSVP'd show this p element --}}
         {{else}}
         <p class="emtpy">You have not RSVP'd to any events!</p>
         {{/else}}
+      {{/each}}
     </div>
 
     <script type="text/javascript" src="./public/js/materialize.min.js"></script>
     
     </body>
-  
-  </html>
