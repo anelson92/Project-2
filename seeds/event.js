@@ -7,7 +7,6 @@ const eventData = [
     event_date: "10-15-2024",
     event_loc: "Chicago, IL",
     event_type: "Wedding",
-    event_owner: 1,
   },
 ];
 
