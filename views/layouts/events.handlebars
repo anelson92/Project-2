@@ -1,0 +1,82 @@
+  <body>
+
+    <div class="container">
+    
+      <header class="display-flex justify-space-between align-center p-2">
+        <h3>
+          Your events: 
+        </h3>
+      </header>
+      {{#each events as |event|}}
+            <div class="row">
+              <div class="col s6 m6">
+                <div class="small card">
+                  <div class="card-image">
+                    <img src="{{image-url}}">
+                    <span class="card-title">{{event_name}}</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light indigo lighten-2"><i class="material-icons">check</i></a>
+                  </div>
+                  <div class="card-content">
+                    <p>
+                      {{event_type}}
+                    </p>
+                    <p>
+                      {{event_date}}
+                    </p>
+                    <p>
+                      {{event_loc}}
+                    </p>
+                    <p>
+                      {{description}}
+                    </p>
+                    <p>
+                      Hosted by:
+                      {{event_owner}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+      {{/each}}
+        {{!-- if the guest has no events then show this p element--}}
+        {{else}}
+        <p class="emtpy">You have no events to RSVP to!</p>
+        {{/else}}
+      {{#each guests as |event_id|}}
+            <div class="row">
+            <div class="col s6 m6">
+                <div class="small card">
+                <div class="card-image">
+                    <img src="{{image-url}}">
+                    <span class="card-title">{{event_name}}</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light indigo lighten-2"><i class="material-icons">check</i></a>
+                </div>
+                <div class="card-content">
+                    <p>
+                    {{event_type}}
+                    </p>
+                    <p>
+                    {{event_date}}
+                    </p>
+                    <p>
+                    {{event_loc}}
+                    </p>
+                    <p>
+                    {{description}}
+                    </p>
+                    <p>
+                    Hosted by:
+                    {{event_owner}}
+                    </p>
+                </div>
+                </div>
+            </div>
+        {{!-- if no events are RSVP'd show this p element --}}
+        {{else}}
+        <p class="emtpy">You have not RSVP'd to any events!</p>
+        {{/else}}
+      {{/each}}
+    </div>
+
+    <script type="text/javascript" src="./public/js/materialize.min.js"></script>
+    
+    </body>

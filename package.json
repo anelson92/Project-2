@@ -5,7 +5,9 @@
   "main": ".npm-init.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node seeds/seeds.js",
+    "lint": "npx eslint **/*.js"
   },
   "repository": {
     "type": "git",
@@ -28,5 +30,10 @@
     "mysql2": "^3.1.1",
     "prettier": "^2.8.4",
     "sequelize": "^6.28.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
+    "prettier": "^2.1.2"
   }
 }
