@@ -33,7 +33,7 @@ const loginFormHandler = async (event) => {
     const password = document.querySelector('#signup-pwd').value.trim();
   
     if (username && email && password) {
-      const response = await fetch('/api/users', {
+      const response = await fetch('/api/user/TBA', { //Need to finish fetch url 
         method: 'POST',
         body: JSON.stringify({ username, email, password }),
         headers: { 'Content-Type': 'application/json' },
