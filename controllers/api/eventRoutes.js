@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const withAuth = require('../../utils/auth');
 // const { default: events } = require('inquirer/lib/utils/events');
 const { Event, Guest } = require('../../models');
 
