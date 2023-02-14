@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="google" content="notranslate" />
@@ -8,27 +11,33 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
-   
 
 <body>
     <div class="section"></div>
 <!-- Only include the logout script if the user is logged in -->
-
     <div class ="row">
         <div class="col s8"></div>
-{{#if logged-in}}
-    <button class="large btn waves-effect waves-light indigo lighten-2" type="submit" name="action">Log Out
-      <i class="large material-icons right">flight_takeoff</i>
-    </button>
-{{/if}}
+    {{#if logged-in}}
+         <button class="large btn waves-effect waves-light indigo lighten-2" type="submit" name="action">New Event 
+        <i class="large material-icons right">add</i>
+        </button>
 
-<!-- Only include the logout script if the user is logged in -->
-{{#if logged-in}}
-    <script src="/js/logout.js"></script>
-{{/if}}
+        <button class="large btn waves-effect waves-light indigo lighten-2" type="submit" name="action">Log Out
+          <i class="large material-icons right">flight_takeoff</i>
+        </button>
 
+        <!-- Only include the logout script if the user is logged in -->
+        <script src="/js/logout.js"></script>
+    {{/if}}
+
+    {{#if createEvent}}
+    {{> newEvent}}
+    {{/if}}
+
+    <main class = "body">
+        {{{ body }}}
+    </main>
+
+      </div>
     </div>
-</div>
 </body>
-
-</html>

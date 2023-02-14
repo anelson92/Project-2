@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="google" content="notranslate" />
@@ -15,16 +18,26 @@
     <div class ="row">
         <div class="col s8"></div>
     {{#if logged-in}}
+         <button class="large btn waves-effect waves-light indigo lighten-2" type="submit" name="action">New Event 
+          <i class="large material-icons right">add</i>
+        </button>
+
         <button class="large btn waves-effect waves-light indigo lighten-2" type="submit" name="action">Log Out
           <i class="large material-icons right">flight_takeoff</i>
         </button>
-    {{{ body }}}
-    {{/if}}
-    <!-- Only include the logout script if the user is logged in -->
-    {{#if logged-in}}
+
+        <!-- Only include the logout script if the user is logged in -->
         <script src="/js/logout.js"></script>
     {{/if}}
 
-        </div>
+    {{#if createEvent}}
+    {{> newEvent}}
+    {{/if}}
+
+    <main class = "body">
+        {{{ body }}}
+    </main>
+
+      </div>
     </div>
 </body>
