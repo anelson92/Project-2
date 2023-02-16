@@ -11,17 +11,17 @@ const newFormHandler = async function(event) {
 
   if (event_name && description && event_date && 
       event_time && event_loc && filename && hostedBy) {
-    const response = await fetch(`api/event/`, {
-      method: "POST",
+    const response = await fetch('api/event/', {
+      method: 'POST',
       body: JSON.stringify({
-      event_name,
-      description,
-      event_date,
-      event_time,
-      event_loc,
-      filename,
-      hostedBy
-    }),
+        event_name,
+        description,
+        event_date,
+        event_time,
+        event_loc,
+        filename,
+        hostedBy
+      }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -41,6 +41,6 @@ const cancelHandler = async () => {
 };
 
 
-document.querySelector("#submit").addEventListener("click", newFormHandler);
-document.querySelector("#cancel").addEventListener("click", cancelHandler);
+document.querySelector('#submit').addEventListener('click', newFormHandler);
+document.querySelector('#cancel').addEventListener('click', cancelHandler);
 
