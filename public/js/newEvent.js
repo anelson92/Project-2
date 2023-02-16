@@ -5,17 +5,17 @@ const newFormHandler = async function(event) {
   const description = document.querySelector('#description').value;
   const date = document.querySelector('#event_date').value;
   const location = document.querySelector('#event_loc').value;
-  const eventType = document.querySelector('#event_type').value;
+  const filename = document.querySelector('#event_type').value;
 
-  if (eventTitle && description && date && location && eventType) {
-    const response = await fetch(`api/event`, {
+  if (eventTitle && description && date && location && filename) {
+    const response = await fetch(`api/event/`, {
       method: "POST",
       body: JSON.stringify({
       eventTitle,
       description,
       date,
       location,
-      eventType
+      filename
     }),
       headers: {
         'Content-Type': 'application/json',

@@ -94,7 +94,7 @@ router.get('/login', (req, res) => {
       const events = eventData.map((event) => event.get({ plain: true }));
 
   
-      res.render('events', {
+      res.render('newEvent', {
         ...events,
         logged_in: req.session.logged_in
       });
