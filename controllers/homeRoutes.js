@@ -1,8 +1,7 @@
 const router = require('express').Router();
 const { User, Event } = require('../models');
 const withAuth = require('../utils/auth');
-
-//const { events } = require('inquirer/lib/utils/events');//
+const { User, Event } = require('../models');
 
 router.get('/', async (req, res)=> {
 try {
@@ -81,7 +80,7 @@ router.get('/login', (req, res) => {
     }
   });
 
-  router.get('/newEvent', withAuth, async (req, res) => {
+  router.get('newEvent', withAuth, async (req, res) => {
     try {
       const eventData = await Event.findByPk(req.params.id, {
         include: [
@@ -93,16 +92,15 @@ router.get('/login', (req, res) => {
       });
   
       const events = eventData.map((event) => event.get({ plain: true }));
-    
-      res.render('newEvent', {
+
+  
+      res.render('events', {
         ...events,
         logged_in: req.session.logged_in
       });
-
     } catch (err) {
       res.status(500).json(err);
     }
-   
   });
 
   module.exports = router;
