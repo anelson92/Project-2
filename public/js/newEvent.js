@@ -30,6 +30,19 @@ const newFormHandler = async function(event) {
   }
 };
   
+
+    document.location.replace("/profile");
+  };
+
+
+  // event listener for datepicker on newEvent form
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.datepicker');
+    var instances = M.Datepicker.init(elems, options);
+  });
+  
+  document.querySelector("#new-post-form").addEventListener("submit", newFormHandler);
+=======
 const cancelHandler = async () => {
   document.location.replace('/profile');
 };
@@ -37,3 +50,4 @@ const cancelHandler = async () => {
 
 document.querySelector("#submit").addEventListener("click", newFormHandler);
 document.querySelector("#cancel").addEventListener("click", cancelHandler);
+

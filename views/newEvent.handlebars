@@ -4,33 +4,50 @@
     <div class="login-card">
       <h4 class="page-title">Create Your New Event</h2>
       <form action="#">
-       <div class="small card">
-            
-            <div>
-                <label for="event_name">Event Name: </label>
-                <input type="text" id="event_name"/>
-            </div>
-            <div>
-                <label for="description">Description:</label>
-                <input type="text" id="description"/>
-            </div>
+       
+        <div class="row">
+            <form class="col s12">
+            <div class="row">
+            <div class="input-field col s6">
+            <input placeholder="Placeholder" id="event_name" type="text" class="validate">
+            <label for="event_name">Event Name</label>
+        </div>
+        <div class="row">
+            <form class="col s12">
+            <div class="row">
+            <div class="input-field col s6">
+            <input placeholder="Placeholder" id="description" type="text" class="validate">
+            <label for="description">Description</label>
+        </div>
             <div>
                 <label for="event_date">Event Date:</label>
-                <input type="text" id="event_date"/>
+                <input type="text" class="datepicker" id="event_date"/>
             </div>
-            <div>
-                <label for="event_loc">Location:</label>
-                <input type="text" id="event_loc"/>
-            </div>
-            <div>
-                <label for="event_type">Event Type:</label>
-                <input type="text" id="event_type"/>
-            </div>
-            <div>
-                <label for="event_owner">Hosted by:</label>
-                <input type="text" id="event_owner"/>
-            </div>
-       </div>
+        <div class="row">
+            <form class="col s12">
+            <div class="row">
+            <div class="input-field col s6">
+            <input placeholder="Placeholder" id="event_loc" type="text" class="validate">
+            <label for="event_loc">Event Location</label>
+        </div>
+        <div class="input-field col s12">
+            <select>
+                <option value="" disabled selected>What kind of event are you having?</option>
+                <option value="1">Birthday</option>
+                <option value="2">Wedding</option>
+                <option value="3">Volunteer</option>
+                <option value="4">Holiday</option>
+                <option value="5">Reunion</option>
+            </select>
+          <label>Event Type</label>
+        </div>
+        <div class="row">
+            <form class="col s12">
+            <div class="row">
+            <div class="input-field col s6">
+            <input placeholder="Placeholder" id="event_owner" type="text" class="validate">
+            <label for="event_owner">Event Host</label>
+        </div>
 </div>
 
 <script src="/js/newEvent.js"></script>
