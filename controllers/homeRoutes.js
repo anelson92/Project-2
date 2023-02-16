@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { User, Event } = require('../models');
 const withAuth = require('../utils/auth');
 const { User, Event } = require('../models');
 
@@ -14,7 +15,7 @@ try {
     });
   
       // Serialize data so the template can read it
-      const events = eventData.map((event) => event.get({ plain: true }));
+      const events = eventData.map((events) => events.get({ plain: true }));
   
       // Pass serialized data and session flag into template
       res.render('homepage', { 
