@@ -1,29 +1,19 @@
-<div class="row">
-            <div class="col s6 m6">
-            <div class="small card">
-                <div class="card-image">
-                <img src="{{image-url}}">
-                <span class="card-title">{{event_name}}</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light indigo lighten-2"><i class="material-icons">check</i></a>
-                </div>
-                <div class="card-content">
-                <p>
-                    {{event_type}}
-                </p>
-                <p>
-                    {{event_date}}
-                </p>
-                <p>
-                    {{event_loc}}
-                </p>
-                <p>
-                    {{description}}
-                </p>
-                <p>
-                    Hosted by:
-                    {{event_owner}}
-                </p>
-                </div>
-            </div>
-            </div>
- </div>
+ <div class="col s12 m8 offset-m2 l6 offset-l3">
+    <div class="card-panel grey lighten-5 z-depth-1">
+        <div class="row valign-wrapper">
+        <div class="col s2">
+            <img src="photos/{{filename}}" alt="" class=" responsive-img">
+        </div>
+        <div class="col s10">
+            <h1>{{event_name}}</h1>
+            <p class="black-text">
+            <b>Date:</b> {{ format_date event_date}}<br><br>
+            <b>Location:</b> {{event_loc}}
+            </p>
+            <ul>
+                <li><a href="/event/{{id}}" class="waves-effect waves-light btn"><i class="material-icons right">auto_awesome</i>View Full Event</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</div>

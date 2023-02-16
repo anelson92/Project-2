@@ -1,53 +1,59 @@
 <div class="container">
 
 <div class="row justify-space-between-md">
-    <div class="login-card">
-      <h4 class="page-title">Create Your New Event</h2>
-      <form action="#">
-       
-        <div class="row">
-            <form class="col s12">
-            <div class="row">
-            <div class="input-field col s6">
-            <input placeholder="Placeholder" id="event_name" type="text" class="validate">
-            <label for="event_name">Event Name</label>
-        </div>
-        <div class="row">
-            <form class="col s12">
-            <div class="row">
-            <div class="input-field col s6">
-            <input placeholder="Placeholder" id="description" type="text" class="validate">
-            <label for="description">Description</label>
-        </div>
-            <div>
-                <label for="event_date">Event Date:</label>
-                <input type="text" class="datepicker" id="event_date"/>
+    <div class="event-card card-panel grey lighten-5 z-depth-1">
+        <h4 class="page-title">Create Your New Event</h4>
+        <form action="#">
+            <div class="input-field col s12">
+                <input placeholder="" id="event_name" type="text" class="validate">
+                <label for="event_name" class="active">Event Name</label>
             </div>
-        <div class="row">
-            <form class="col s12">
-            <div class="row">
+            <div class="input-field col s12">
+                <input placeholder="" id="event_loc" type="text" class="validate">
+                <label for="event_loc" class="active">Location</label>
+            </div>
+            <div class="input-field col s12">
+                <input placeholder="" id="description" type="text" class="validate">
+                <label for="description" class="active">Description</label>
+            </div>
+            <div class="input-field col s2">
+                <label for="description" class="active">Date</label>
+                <input 
+                    id="event_date" 
+                    type="date" 
+                    min="02-01-2022" max="12-31-2027">
+            </div>
+            <div class="input-field col s2">
+                <label for="description" class="active">Event Time</label>
+                <input 
+                    class="time"
+                    type="time" 
+                    id="event-time">
+            </div>
             <div class="input-field col s6">
-            <input placeholder="Placeholder" id="event_loc" type="text" class="validate">
-            <label for="event_loc">Event Location</label>
-        </div>
-        <div class="input-field col s12">
-            <select>
-                <option value="" disabled selected>What kind of event are you having?</option>
-                <option value="1">Birthday</option>
-                <option value="2">Wedding</option>
-                <option value="3">Volunteer</option>
-                <option value="4">Holiday</option>
-                <option value="5">Reunion</option>
+                <input placeholder="" id="hosted" type="text" class="validate">
+                <label for="hosted" class="active">Primary Host(s)</label>
+            </div>
+            <select id="event_type" class="browser-default">
+                <option id="" disabled selected>What kind of event are you having?</option>
+                    <option id="1" value="birthday.png" >Birthday</option>
+                    <option id="2" value="wedding.png">Wedding</option>
+                    <option id="3" value="volunteer.png">Volunteer</option>
+                    <option id="4" value="holiday.png">Holiday</option>
+                    <option id="5" value="movieNight.png">Movie Night</option>
+                    <option id="6" value="recycle.png">Recycling</option>
             </select>
-          <label>Event Type</label>
-        </div>
-        <div class="row">
-            <form class="col s12">
-            <div class="row">
-            <div class="input-field col s6">
-            <input placeholder="Placeholder" id="event_owner" type="text" class="validate">
-            <label for="event_owner">Event Host</label>
-        </div>
+            <div>
+                <button id="submit" class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+                <button id="cancel" class="btn waves-effect waves-light" type="cancel" name="action">Cancel
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+            
+        </form>
+    </div>
 </div>
 
 <script src="/js/newEvent.js"></script>
