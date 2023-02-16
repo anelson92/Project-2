@@ -1,4 +1,4 @@
-const newFormHandler = async function(event) {
+const newFormHandler = async function (event) {
   event.preventDefault();
 
   const event_name = document.querySelector('#event_name').value.trim();
@@ -9,19 +9,26 @@ const newFormHandler = async function(event) {
   const filename = document.querySelector('#event_type').value.trim();
   const hostedBy = document.querySelector('#hosted').value.trim();
 
-  if (event_name && description && event_date && 
-      event_time && event_loc && filename && hostedBy) {
+  if (
+    event_name &&
+    description &&
+    event_date &&
+    event_time &&
+    event_loc &&
+    filename &&
+    hostedBy
+  ) {
     const response = await fetch(`api/event/`, {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify({
-      event_name,
-      description,
-      event_date,
-      event_time,
-      event_loc,
-      filename,
-      hostedBy
-    }),
+        event_name,
+        description,
+        event_date,
+        event_time,
+        event_loc,
+        filename,
+        hostedBy,
+      }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -29,7 +36,7 @@ const newFormHandler = async function(event) {
 
     if (response.ok) {
       document.location.replace('/profile');
-      console.log(response)
+      console.log(response);
     } else {
       alert('Failed to create project');
     }
@@ -40,7 +47,5 @@ const cancelHandler = async () => {
   document.location.replace('/profile');
 };
 
-
-document.querySelector("#submit").addEventListener("click", newFormHandler);
-document.querySelector("#cancel").addEventListener("click", cancelHandler);
-
+document.querySelector('#submit').addEventListener('click', newFormHandler);
+document.querySelector('#cancel').addEventListener('click', cancelHandler);
