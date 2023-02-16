@@ -1,15 +1,15 @@
-const User = require("./User");
-const Event = require("./Event");
+const User = require('./User');
+const Event = require('./Event');
 
 //A user can have many events
 User.hasMany(Event, {
-    foreignKey: "event_owner",
-    onDelete: "CASCADE",
-  });
+  foreignKey: 'event_owner',
+  onDelete: 'CASCADE',
+});
 
 //An event can only belong to one user
 Event.belongsTo(User, {
-    foreignKey: "event_owner"
-  });
+  foreignKey: 'event_owner'
+});
 
-  module.exports = { User, Event };
+module.exports = { User, Event };
