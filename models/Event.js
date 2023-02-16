@@ -20,14 +20,14 @@ Event.init(
         allowNull: false,
       },
       event_date: {
-        type: DataTypes.DATEONLY,
+        type: DataTypes.DATE,
         allowNull: false,
       },
       event_loc: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      event_type: {
+      filename: {
         type: DataTypes.STRING,
         allowNull: false,
       },

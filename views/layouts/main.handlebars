@@ -18,7 +18,7 @@
     <div class ="row">
         <div class="col s8"></div>
     {{#if logged_in}}
-         <button class="large btn waves-effect waves-light indigo lighten-2" type="submit" name="action">New Event 
+         <button id="newEvent" class="large btn waves-effect waves-light indigo lighten-2" type="submit" name="action">New Event 
           <i class="large material-icons right">add</i>
         </button>
 
@@ -40,6 +40,7 @@
     {{#if logged_in}}
     <!-- Only include the logout script if the user is logged in -->
         <script src="/js/logout.js"></script>
+        <script src="/js/main.js"></script>
     {{/if}}
 </body>
 
