@@ -79,4 +79,8 @@ router.get('/login', (req, res) => {
     }
   });
 
+  router.get('/newEvent', async (req, res) => {
+    res.render('newEvent');
+  });
+
   module.exports = router;
