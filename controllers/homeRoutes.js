@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const { User, Event, Guest } = require('../models');
+const { User, Event } = require('../models');
 
 router.get('/', async (req, res)=> {
 try {
@@ -18,7 +18,7 @@ try {
   
       // Pass serialized data and session flag into template
       res.render('homepage', { 
-        projects, 
+        events, 
         logged_in: req.session.logged_in 
       });
     } catch (err) {
@@ -79,8 +79,27 @@ router.get('/login', (req, res) => {
     }
   });
 
-  router.get('/newEvent', async (req, res) => {
-    res.render('newEvent');
+  router.get('newEvent', withAuth, async (req, res) => {
+    try {
+      const eventData = await Event.findByPk(req.params.id, {
+        include: [
+          {
+            model: User,
+            attributes: ['name'],
+          },
+        ],
+      });
+  
+      const events = eventData.map((event) => event.get({ plain: true }));
+
+  
+      res.render('events', {
+        ...events,
+        logged_in: req.session.logged_in
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
   });
 
   module.exports = router;
