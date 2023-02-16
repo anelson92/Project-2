@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { User, Event } = require('../models');
 const withAuth = require('../utils/auth');
-const { User, Event } = require('../models');
 
 router.get('/', async (req, res)=> {
 try {
@@ -9,7 +8,7 @@ try {
         include: [
             {
             model: User,
-            attributes: ['name'],
+            attributes: ['username'],
             },
         ],
     });
@@ -18,7 +17,7 @@ try {
       const events = eventData.map((events) => events.get({ plain: true }));
   
       // Pass serialized data and session flag into template
-      res.render('homepage', { 
+      res.render('login', { 
         events, 
         logged_in: req.session.logged_in 
       });
@@ -47,7 +46,7 @@ router.get('/login', (req, res) => {
       });
   
       const user = userData.get({ plain: true });
-  
+      console.log(user)
       res.render('profile', {
         ...user,
         logged_in: true
@@ -63,7 +62,7 @@ router.get('/login', (req, res) => {
         include: [
           {
             model: User,
-            attributes: ['name'],
+            attributes: ['username'],
           },
         ],
       });
@@ -80,13 +79,13 @@ router.get('/login', (req, res) => {
     }
   });
 
-  router.get('newEvent', withAuth, async (req, res) => {
+  router.get('/newEvent', withAuth, async (req, res) => {
     try {
       const eventData = await Event.findByPk(req.params.id, {
         include: [
           {
             model: User,
-            attributes: ['name'],
+            attributes: ['username'],
           },
         ],
       });

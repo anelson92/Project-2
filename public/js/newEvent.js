@@ -29,10 +29,6 @@ const newFormHandler = async function(event) {
     }
   }
 };
-  
-
-    document.location.replace("/profile");
-  };
 
 
   // event listener for datepicker on newEvent form
@@ -42,7 +38,6 @@ const newFormHandler = async function(event) {
   });
   
   document.querySelector("#new-post-form").addEventListener("submit", newFormHandler);
-=======
 const cancelHandler = async () => {
   document.location.replace('/profile');
 };

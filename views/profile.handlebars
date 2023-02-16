@@ -2,41 +2,25 @@
 
     <div class="row">
       <div class="col-auto">
-          <h2>Welcome, {{username}}!</h2>
+          <h2>Welcome, {{name}}!</h2>
       </div>
     </div>
-
-    {{#if event.length}}
+<p>Hello</p>
+    {{#if events.length}}
         <header class="display-flex justify-space-between align-center p-2">
         <h1>
             Your events: 
         </h1>
         </header>
-        {{#each event as |event|}}
+        {{#each events as |event|}}
             {{> event-details}}
         {{/each}}
-
-        {{#else}}
         {{!-- if the guest has no events then show this p element--}}
-        <p class="emtpy">You have no events to RSVP to!</p>
-        {{/else}}
-    {{/if}}
-
-
-  {{#if guest.length}}
-
-        {{#each guest as |event_id|}}
-        {{> event-details}}
-        {{/each}}
+    {{else}}
+        <p class="empty">You have no events to RSVP to!</p>
         
-        {{#else}}
-            {{!-- if no events are RSVP'd show this p element --}}
-        <p class="empty">You have not RSVP'd to any events!</p>
-        {{/else}}
-
     {{/if}}
 
+    
     </div>
-
-    <script src='./models/event.js'></script>
 

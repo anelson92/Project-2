@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
 // const { default: events } = require('inquirer/lib/utils/events');
-const { Event, Guest } = require('../../models');
+const { Event } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
@@ -17,14 +17,7 @@ router.post('/', async (req, res) => {
 });
 router.get('/', async (req, res) => {
   try {
-    const dbEventData = await Event.findAll({
-      include: [
-        {
-          model: Event,
-          attributes: ['event_name', 'description'],
-        },
-      ],
-    });
+    const dbEventData = await Event.findAll({});
   }
   catch (err) {
     console.log(err);
