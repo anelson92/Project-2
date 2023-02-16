@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3301;
 
 // Set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create({ });
+const hbs = exphbs.create({ helpers });
 
 const sess = {
   secret: 'Group 3',
@@ -25,8 +25,8 @@ const sess = {
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
-  })
+    db: sequelize,
+  }),
 };
 
 app.use(session(sess));

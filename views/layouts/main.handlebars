@@ -7,41 +7,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Party On</title>
+     <!-- This adds our favicon to the webpage tab -->
+    <link rel="icon" href="https://em-content.zobj.net/source/skype/289/party-popper_1f389.png"/>
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 
 <body>
-    <div class="section"></div>
-<!-- Only include the logout script if the user is logged in -->
-    <div class ="row">
-        <div class="col s8"></div>
-    {{#if logged_in}}
-         <button id="newEvent" class="large btn waves-effect waves-light indigo lighten-2" type="submit" name="action">New Event 
-          <i class="large material-icons right">add</i>
-        </button>
+    <header>
+        <!--This is the navigation bar buttons section-->
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">Invite On!</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    {{#if logged_in}}
+                    <li><a href="/">Dashboard</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a id="newEvent" href="/newEvent">New Event</a></li>
+                    <li><a id="logout" href="/logout">Log Out</a></li>
+                    {{else}}
+                    <li><a id="login-signup" href="/login">Login or Signup</a></li>
+                    {{/if}}
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-        <button id="logout" class="large btn waves-effect waves-light indigo lighten-2" type="submit" name="action">Log Out
-          <i class="large material-icons right">flight_takeoff</i>
-        </button>
-    {{/if}}
-
-    {{#if createEvent}}
-    {{> newEvent}}
-    {{/if}}
-
-    <main class = "body">
-        {{{ body }}}
+    <main>
+        {{{body}}}
+     
     </main>
+       
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Invite On! Created By</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="https://github.com/anelson92" target="_blank" rel="noopener noreferrer">Amanda Nelson</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://github.com/stonegroundmustard" target="_blank" rel="noopener noreferrer">Fox Stokes</a></li> 
+                        <li><a class="grey-text text-lighten-3" href="https://github.com/VenusViolet" target="_blank" rel="noopener noreferrer">Venus Rodin</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://github.com/lesliefg" target="_blank" rel="noopener noreferrer">Leslie Garcia</a></li>
+                    </ul>
+                    
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                <li><a class="grey-text text-lighten-3" href="/aboutUs" target="_blank" rel="noopener noreferrer">About Us</a></li>
+                <li><a class="grey-text text-lighten-3" href="mailto:leslie.garcia2433@gmail.com" target="_blank" rel="noopener noreferrer">Contact Us</a></li>
+                <li><a class="grey-text text-lighten-3" href="https://github.com/anelson92/Project-2" target="_blank" rel="noopener noreferrer">GitHub Repo</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+            © 2023 Copyright Or Something
+            </div>
+        </div>
+        </footer>
 
-      </div>
-    </div>
-    {{#if logged_in}}
-    <!-- Only include the logout script if the user is logged in -->
+        {{#if logged_in}}
         <script src="/js/logout.js"></script>
-        <script src="/js/main.js"></script>
-    {{/if}}
+        {{else}}
+        <script src="/js/loginButton.js"></script>
+        {{/if}}
 </body>
 
 </html>

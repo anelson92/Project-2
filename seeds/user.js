@@ -1,11 +1,11 @@
-const { User } = require("../models");
+const { User } = require('../models');
 
 const userData = [
-    {
-        name: "Linda",
-        email: "lindaBride@gmail.com",
-        password: "LindaHitched2024!"
-    }
+  {
+    username: 'Linda',
+    email: 'lindaBride@gmail.com',
+    password: 'LindaHitched2024!',
+  },
 ];
 
 const seedUsers = () =>

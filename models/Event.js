@@ -23,11 +23,19 @@ Event.init(
         type: DataTypes.DATE,
         allowNull: false,
       },
+      event_time: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       event_loc: {
         type: DataTypes.STRING,
         allowNull: false,
       },
       filename: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      hostedBy: {
         type: DataTypes.STRING,
         allowNull: false,
       },
