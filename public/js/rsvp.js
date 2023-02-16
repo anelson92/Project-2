@@ -1,13 +1,10 @@
-const addEvent = document.getElementById()
+// const addEvent = document.getElementById('rsvp');
 
-const rsvp = document.querySelector('rsvp').value;
+// const rsvp = document.querySelector('rsvp').value;
 
-// listen to button on main.handlebars
-// once clicked add that event to list of events that the user has RSVP'd to 
-
+// // function to add rsvp'd event to list of rsvp'd events 
 
 
-
-
-
-rsvpEvent.addEventListener('click', addEvent)
+// // listen to button on main.handlebars
+// // once clicked add that event to list of events that the user has RSVP'd to 
+// rsvpEvent.addEventListener('click', addEvent) 

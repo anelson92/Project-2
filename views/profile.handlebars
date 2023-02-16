@@ -2,87 +2,34 @@
 
     <div class="row">
       <div class="col-auto">
-          <h2>Welcome, {{name}}!</h2>
+          <h2>Welcome, {{username}}!</h2>
       </div>
     </div>
 
     {{#if event.length}}
+        <header class="display-flex justify-space-between align-center p-2">
+        <h1>
+            Your events: 
+        </h1>
+        </header>
+        {{#each event as |event|}}
+            {{> event-details}}
+        {{/each}}
 
-    <header class="display-flex justify-space-between align-center p-2">
-    <h3>
-        Your events: 
-    </h3>
-    </header>
-    {{#each event as |event|}}
-        <div class="row">
-            <div class="col s6 m6">
-            <div class="small card">
-                <div class="card-image">
-                <img src="{{image-url}}">
-                <span class="card-title">{{event_name}}</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light indigo lighten-2" id="rsvp"><i class="material-icons">check</i></a>
-                </div>
-                <div class="card-content">
-                <p>
-                    {{event_type}}
-                </p>
-                <p>
-                    {{event_date}}
-                </p>
-                <p>
-                    {{event_loc}}
-                </p>
-                <p>
-                    {{description}}
-                </p>
-                <p>
-                    Hosted by:
-                    {{event_owner}}
-                </p>
-                </div>
-            </div>
-            </div>
-    {{/each}}
-    {{!-- if the guest has no events then show this p element--}}
-    {{#else}}
-    <p class="emtpy">You have no events to RSVP to!</p>
-    {{/else}}
-   {{/if}}
+        {{#else}}
+        {{!-- if the guest has no events then show this p element--}}
+        <p class="emtpy">You have no events to RSVP to!</p>
+        {{/else}}
+    {{/if}}
 
   {{#if guest.length}}
 
-    {{#each guest as |event_id|}}
-                <div class="row">
-                <div class="col s6 m6">
-                    <div class="small card">
-                    <div class="card-image">
-                        <img src="{{image-url}}">
-                        <span class="card-title">{{event_name}}</span>
-                        <a class="btn-floating halfway-fab waves-effect waves-light indigo lighten-2"><i class="material-icons">check</i></a>
-                    </div>
-                    <div class="card-content">
-                        <p>
-                        {{event_type}}
-                        </p>
-                        <p>
-                        {{event_date}}
-                        </p>
-                        <p>
-                        {{event_loc}}
-                        </p>
-                        <p>
-                        {{description}}
-                        </p>
-                        <p>
-                        Hosted by:
-                        {{event_owner}}
-                        </p>
-                    </div>
-                    </div>
-                </div>
-            {{!-- if no events are RSVP'd show this p element --}}
-            {{/each}}
+        {{#each guest as |event_id|}}
+        {{> event-details}}
+        {{/each}}
+        
         {{#else}}
+            {{!-- if no events are RSVP'd show this p element --}}
         <p class="empty">You have not RSVP'd to any events!</p>
         {{/else}}
 
