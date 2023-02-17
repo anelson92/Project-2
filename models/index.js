@@ -9,7 +9,7 @@ User.hasMany(Event, {
 
 //An event can only belong to one user
 Event.belongsTo(User, {
-  foreignKey: 'event_owner',
+  foreignKey: 'event_owner'
 });
 
 module.exports = { User, Event };

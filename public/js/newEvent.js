@@ -19,6 +19,7 @@ const newFormHandler = async function (event) {
     hostedBy
   ) {
     const response = await fetch(`api/event/`, {
+
       method: 'POST',
       body: JSON.stringify({
         event_name,
